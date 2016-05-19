@@ -1,0 +1,11 @@
+{
+  "name": "ServiceWorker Sample",
+  "short_name": "SW Sample",
+  "icons": [{
+    "src": "(アプリアイコン画像のURL)",
+    "sizes": "200x200",
+    "type": "image/png"
+  }],
+  "display": "standalone",
+  "gcm_sender_id": "409249161013"
+}
