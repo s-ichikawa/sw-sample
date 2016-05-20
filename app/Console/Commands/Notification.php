@@ -40,7 +40,6 @@ class Notification extends Command
     public function handle()
     {
         foreach (User::all() as $user) {
-            var_dump($user->registration_id);
             PushNotification::app('appNameAndroid')
                 ->to($user->registration_id)
                 ->send('Hello World, i`m a push message');

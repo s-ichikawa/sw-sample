@@ -17,10 +17,11 @@ Route::get('/', function () {
 
 Route::post('/store', function () {
     $endpoint = Request::getContent();
-    \App\User::query()->firstOrCreate([
+    $user = \App\User::query()->firstOrNew([
         'name'     => 's-ichikawa',
         'email'    => 'ichikawa.shingo.0829@gmail.com',
         'password' => '123456789',
-        'registration_id' => substr($endpoint, strlen('https://android.googleapis.com/gcm/send/'))
     ]);
+    $user->registration_id = substr($endpoint, strlen('https://android.googleapis.com/gcm/send/'));
+    $user->save();
 });
